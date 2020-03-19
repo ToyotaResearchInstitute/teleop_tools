@@ -144,6 +144,7 @@ class JoyTeleop(Node):
         if self.al_clients[action_name].server_is_ready():
             if action_name in self.offline_actions:
                 self.offline_actions.remove(action_name)
+                self.old_buttons = []
         else:
             if action_name not in self.offline_actions:
                 self.get_logger().warn(
